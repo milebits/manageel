@@ -22,12 +22,12 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->longText('street')->nullable();
             $table->longText('city')->nullable();
             $table->longText('postcode')->nullable();
             $table->longText('country')->nullable();
+            $table->boolean('enabled')->default(true);
             $table->timestamps();
         });
     }
