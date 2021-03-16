@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\ManageEL;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -20,15 +21,6 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/dashboard';
 
     /**
-     * The controller namespace for the application.
-     *
-     * When present, controller route declarations will automatically be prefixed with this namespace.
-     *
-     * @var string|null
-     */
-    // protected $namespace = 'App\\Http\\Controllers';
-
-    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
@@ -38,15 +30,23 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::prefix('api')
-                ->middleware('api')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/api.php'));
-
-            Route::middleware('web')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/web.php'));
+            $this->APIRoutes();
+            $this->WebRoutes();
         });
+    }
+
+    public function APIRoutes()
+    {
+        Route::prefix('api')->middleware(['api'])->group(base_path(
+            'routes/api/v' . ManageEL::API_VERSION . '/api.php'
+        ));
+    }
+
+    public function WebRoutes()
+    {
+        Route::middleware(['web'])->group(base_path(
+            'routes/web/v' . ManageEL::WEB_VERSION . '/web.php'
+        ));
     }
 
     /**
