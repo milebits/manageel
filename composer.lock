@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1546a52d759d6e085136b17508959be0",
+    "content-hash": "274c2e5109c961ae7d084631ceb2c5a1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1874,6 +1874,319 @@
             "time": "2021-01-18T20:58:21+00:00"
         },
         {
+            "name": "milebits/authorizer",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milebits/authorizer.git",
+                "reference": "160d6e6d3f965bb4eaf56416cdc56805795d1129"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milebits/authorizer/zipball/160d6e6d3f965bb4eaf56416cdc56805795d1129",
+                "reference": "160d6e6d3f965bb4eaf56416cdc56805795d1129",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6|^7|^8",
+                "milebits/eloquent-filters": ">=2",
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Milebits\\Authorizer\\Providers\\AuthorizerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Helpers/functions.php"
+                ],
+                "psr-4": {
+                    "Milebits\\Authorizer\\": "src/",
+                    "Milebits\\Authoriser\\Database\\": "database/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Hicham SADDEK",
+                    "email": "h.saddek@serrahub.com",
+                    "homepage": "https://linkedin.com/in/hicham-saddek",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Milebits Systems",
+                    "email": "support@milebits.com",
+                    "homepage": "https://os.milebits.com",
+                    "role": "Project Manager"
+                }
+            ],
+            "description": "Permission handling for Laravel 6.0 and higher",
+            "support": {
+                "issues": "https://github.com/milebits/authorizer/issues",
+                "source": "https://github.com/milebits/authorizer/tree/3.0.1"
+            },
+            "time": "2021-02-17T03:10:23+00:00"
+        },
+        {
+            "name": "milebits/eloquent-filters",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milebits/eloquent-filters.git",
+                "reference": "4f53b98cfddd6346180902eef46783fa29add14c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milebits/eloquent-filters/zipball/4f53b98cfddd6346180902eef46783fa29add14c",
+                "reference": "4f53b98cfddd6346180902eef46783fa29add14c",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "6.*|7.*|8.*",
+                "milebits/helpers": ">=1.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "facade/ignition": "2.*",
+                "fakerphp/faker": "1.*",
+                "mockery/mockery": "1.*",
+                "nunomaduro/collision": "5.*",
+                "phpunit/phpunit": "9.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Milebits\\Eloquent\\Filters\\Providers\\EloquentFiltersServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Milebits\\Eloquent\\Filters\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Hicham SADDEK",
+                    "email": "h.saddek@serrahub.com",
+                    "homepage": "https://linkedin.com/in/hicham-saddek",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Milebits Systems",
+                    "email": "support@milebits.com",
+                    "homepage": "https://os.milebits.com",
+                    "role": "Project Manager"
+                }
+            ],
+            "description": "A Laravel PHP library that allows the user to filter the result of Eloquent Model query builders.",
+            "support": {
+                "email": "support@os.milebits.com",
+                "issues": "https://github.com/milebits/eloquent-filters/issues",
+                "source": "https://github.com/milebits/eloquent-filters/tree/2.0.6"
+            },
+            "time": "2021-02-17T02:50:14+00:00"
+        },
+        {
+            "name": "milebits/helpers",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milebits/helpers.git",
+                "reference": "82bec48a7de242415bfe974e19d6ed275ec39535"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milebits/helpers/zipball/82bec48a7de242415bfe974e19d6ed275ec39535",
+                "reference": "82bec48a7de242415bfe974e19d6ed275ec39535",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6|^7|^8",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.12",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Helpers/functions.php"
+                ],
+                "psr-4": {
+                    "Milebits\\Helpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Hicham SADDEK",
+                    "email": "h.saddek@serrahub.com",
+                    "homepage": "https://linkedin.com/in/hicham-saddek",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Milebits Systems",
+                    "email": "support@milebits.com",
+                    "homepage": "https://os.milebits.com",
+                    "role": "Project Manager"
+                }
+            ],
+            "description": "A new laravel package including helper functions for every Milebits package.",
+            "support": {
+                "email": "support@os.milebits.com",
+                "issues": "https://github.com/milebits/helpers/issues",
+                "source": "https://github.com/milebits/helpers/tree/2.0.2"
+            },
+            "time": "2021-02-17T02:50:51+00:00"
+        },
+        {
+            "name": "milebits/laravel-stream",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milebits/laravel-stream.git",
+                "reference": "56d69e91e6df3c631114d7e1ecf5c6480e17dd2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milebits/laravel-stream/zipball/56d69e91e6df3c631114d7e1ecf5c6480e17dd2a",
+                "reference": "56d69e91e6df3c631114d7e1ecf5c6480e17dd2a",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "6.*|7.*|8.*",
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Milebits\\LaravelStream\\Providers\\StreamServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Helpers/functions.php"
+                ],
+                "psr-4": {
+                    "Milebits\\LaravelStream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Milebits Systems",
+                    "email": "support@os.milebits.com",
+                    "homepage": "https://os.milebits.com",
+                    "role": "Project Manager"
+                },
+                {
+                    "name": "Hicham SADDEK",
+                    "email": "h.saddek@serrahub.com",
+                    "homepage": "https://linkedin.com/in/hicham-saddek",
+                    "role": "Lead developer"
+                }
+            ],
+            "description": "A laravel package that allows you to have Video streaming ability in your laravel application.",
+            "keywords": [
+                "files",
+                "images",
+                "laravel",
+                "live",
+                "stream",
+                "streaming",
+                "videos"
+            ],
+            "support": {
+                "issues": "https://github.com/milebits/laravel-stream/issues",
+                "source": "https://github.com/milebits/laravel-stream/tree/2.0.1"
+            },
+            "time": "2020-12-09T19:26:02+00:00"
+        },
+        {
+            "name": "milebits/society",
+            "version": "3.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milebits/society.git",
+                "reference": "726a9a009c592171d3e727c62f694114a0482ada"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milebits/society/zipball/726a9a009c592171d3e727c62f694114a0482ada",
+                "reference": "726a9a009c592171d3e727c62f694114a0482ada",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6|^7|^8",
+                "milebits/eloquent-filters": "^2.0",
+                "milebits/helpers": ">=1.0",
+                "milebits/laravel-stream": ">=1.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Milebits\\Society\\Providers\\SocietyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Milebits\\Society\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Hicham SADDEK",
+                    "email": "h.saddek@serrahub.com",
+                    "homepage": "https://linkedin.com/in/hicham-saddek",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Milebits Systems",
+                    "email": "support@milebits.com",
+                    "homepage": "https://os.milebits.com",
+                    "role": "Project Manager"
+                }
+            ],
+            "description": "A Laravel packages to allow your application to have a social network system.",
+            "support": {
+                "issues": "https://github.com/milebits/society/issues",
+                "source": "https://github.com/milebits/society/tree/3.2.2"
+            },
+            "time": "2021-02-17T02:51:27+00:00"
+        },
+        {
             "name": "mobiledetect/mobiledetectlib",
             "version": "2.8.37",
             "source": {
@@ -1934,6 +2247,92 @@
                 }
             ],
             "time": "2021-02-19T21:22:57+00:00"
+        },
+        {
+            "name": "moneyphp/money",
+            "version": "v3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moneyphp/money.git",
+                "reference": "122664c2621a95180a13c1ac81fea1d2ef20781e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moneyphp/money/zipball/122664c2621a95180a13c1ac81fea1d2ef20781e",
+                "reference": "122664c2621a95180a13c1ac81fea1d2ef20781e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "cache/taggable-cache": "^0.4.0",
+                "doctrine/instantiator": "^1.0.5",
+                "ext-bcmath": "*",
+                "ext-gmp": "*",
+                "ext-intl": "*",
+                "florianv/exchanger": "^1.0",
+                "florianv/swap": "^3.0",
+                "friends-of-phpspec/phpspec-code-coverage": "^3.1.1 || ^4.3",
+                "moneyphp/iso-currencies": "^3.2.1",
+                "php-http/message": "^1.4",
+                "php-http/mock-client": "^1.0.0",
+                "phpspec/phpspec": "^3.4.3",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.18 || ^8.5",
+                "psr/cache": "^1.0",
+                "symfony/phpunit-bridge": "^4"
+            },
+            "suggest": {
+                "ext-bcmath": "Calculate without integer limits",
+                "ext-gmp": "Calculate without integer limits",
+                "ext-intl": "Format Money objects with intl",
+                "florianv/exchanger": "Exchange rates library for PHP",
+                "florianv/swap": "Exchange rates library for PHP",
+                "psr/cache-implementation": "Used for Currency caching"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Money\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mathias Verraes",
+                    "email": "mathias@verraes.net",
+                    "homepage": "http://verraes.net"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                },
+                {
+                    "name": "Frederik Bosch",
+                    "email": "f.bosch@genkgo.nl"
+                }
+            ],
+            "description": "PHP implementation of Fowler's Money pattern",
+            "homepage": "http://moneyphp.org",
+            "keywords": [
+                "Value Object",
+                "money",
+                "vo"
+            ],
+            "support": {
+                "issues": "https://github.com/moneyphp/money/issues",
+                "source": "https://github.com/moneyphp/money/tree/master"
+            },
+            "time": "2020-03-18T17:49:59+00:00"
         },
         {
             "name": "monolog/monolog",
