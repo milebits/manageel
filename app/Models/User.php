@@ -10,6 +10,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Milebits\Authorizer\Concerns\Authorizer;
 use Milebits\Eloquent\Filters\Concerns\Enableable;
+use Milebits\Eloquent\Filters\Concerns\Filterable;
 use Milebits\Eloquent\Filters\Concerns\Nameable;
 use Milebits\Eloquent\Filters\Concerns\Sluggable;
 
@@ -20,7 +21,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    use Authorizer, Nameable, Sluggable, Enableable;
+    use Authorizer, Nameable, Sluggable, Enableable, Filterable;
 
     /**
      * The attributes that are mass assignable.
