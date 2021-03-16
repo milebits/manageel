@@ -55,6 +55,11 @@ return [
         'app' => [
             'driver' => 'local',
             'root' => app_path(),
+        ],
+
+        'themes' => [
+            'driver' => 'local',
+            'root' => base_path('themes'),
         ]
     ],
 
