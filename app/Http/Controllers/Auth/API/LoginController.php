@@ -28,6 +28,6 @@ class LoginController extends Controller
 
     public function fail(): string
     {
-        return 'Identifier or password is incorrect';
+        return back()->withErrors(['session' => 'Identifier or password is incorrect']);
     }
 }
