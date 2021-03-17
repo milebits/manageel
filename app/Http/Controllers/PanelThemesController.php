@@ -19,7 +19,7 @@ class PanelThemesController extends Controller
      */
     public function index(): Response
     {
-        $this->authorize('viewAny.panel_themes');
+        $this->authorize('viewAny', PanelTheme::class);
         return inertia('PanelThemes/Index', ['panelThemes' => PanelTheme::filtered()->paginate()]);
     }
 
@@ -31,7 +31,7 @@ class PanelThemesController extends Controller
      */
     public function create(): Response
     {
-        $this->authorize('store.panel_themes');
+        $this->authorize('store', PanelTheme::class);
         return inertia('PanelThemes/Create');
     }
 
@@ -44,7 +44,7 @@ class PanelThemesController extends Controller
      */
     public function store(StoreRequest $request): PanelTheme
     {
-        $this->authorize('store.panel_themes');
+        $this->authorize('store', PanelTheme::class);
         return PanelTheme::create($request->validated());
     }
 
@@ -57,7 +57,7 @@ class PanelThemesController extends Controller
      */
     public function show(PanelTheme $panelTheme): Response
     {
-        $this->authorize('view.panel_themes');
+        $this->authorize('view', $panelTheme);
         return inertia('PanelThemes/Show', compact('panelTheme'));
     }
 
@@ -70,7 +70,7 @@ class PanelThemesController extends Controller
      */
     public function edit(PanelTheme $panelTheme): Response
     {
-        $this->authorize('update.panel_themes');
+        $this->authorize('update', $panelTheme);
         return inertia('PanelThemes/Update', compact('panelTheme'));
     }
 
@@ -84,7 +84,7 @@ class PanelThemesController extends Controller
      */
     public function update(UpdateRequest $request, PanelTheme $panelTheme): PanelTheme
     {
-        $this->authorize('update.panel_themes');
+        $this->authorize('update', $panelTheme);
         $panelTheme->update($request->validated());
         return $panelTheme;
     }
@@ -98,7 +98,18 @@ class PanelThemesController extends Controller
      */
     public function destroy(PanelTheme $panelTheme): bool
     {
-        $this->authorize('delete.panel_themes');
+        $this->authorize('delete', $panelTheme);
         return $panelTheme->delete();
+    }
+
+    /**
+     * @param PanelTheme $panelTheme
+     * @return bool
+     * @throws AuthorizationException
+     */
+    public function forceDestroy(PanelTheme $panelTheme): bool
+    {
+        $this->authorize('forceDelete', $panelTheme);
+        return $panelTheme->forceDelete();
     }
 }

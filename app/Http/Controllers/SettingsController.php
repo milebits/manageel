@@ -19,7 +19,7 @@ class SettingsController extends Controller
      */
     public function index(): Response
     {
-        $this->authorize('viewAny.settings');
+        $this->authorize('viewAny', Setting::class);
         return inertia('Settings/Index', ['settings', Setting::filtered()->paginate()]);
     }
 
@@ -31,7 +31,7 @@ class SettingsController extends Controller
      */
     public function create(): Response
     {
-        $this->authorize('store.settings');
+        $this->authorize('store', Setting::class);
         return inertia('Settings/Create');
     }
 
@@ -44,7 +44,7 @@ class SettingsController extends Controller
      */
     public function store(StoreRequest $request): Setting
     {
-        $this->authorize('store.settings');
+        $this->authorize('store', Setting::class);
         return Setting::create($request->validated());
     }
 
@@ -57,7 +57,7 @@ class SettingsController extends Controller
      */
     public function show(Setting $setting): Response
     {
-        $this->authorize('view.settings');
+        $this->authorize('view', $setting);
         return inertia('Settings/Show', compact('setting'));
     }
 
@@ -70,7 +70,7 @@ class SettingsController extends Controller
      */
     public function edit(Setting $setting): Response
     {
-        $this->authorize('update.settings');
+        $this->authorize('update', $setting);
         return inertia('Setting/Update', compact('setting'));
     }
 
@@ -84,7 +84,7 @@ class SettingsController extends Controller
      */
     public function update(UpdateRequest $request, Setting $setting): Setting
     {
-        $this->authorize('update.settings');
+        $this->authorize('update', $setting);
         $setting->update($request->validated());
         return $setting;
     }
@@ -98,7 +98,18 @@ class SettingsController extends Controller
      */
     public function destroy(Setting $setting): bool
     {
-        $this->authorize('viewAny.settings');
+        $this->authorize('viewAny', $setting);
         return $setting->delete();
+    }
+
+    /**
+     * @param Setting $setting
+     * @return bool
+     * @throws AuthorizationException
+     */
+    public function forceDestroy(Setting $setting): bool
+    {
+        $this->authorize('forceDelete', $setting);
+        return $setting->forceDelete();
     }
 }

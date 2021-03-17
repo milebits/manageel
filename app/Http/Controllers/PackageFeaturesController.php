@@ -17,7 +17,7 @@ class PackageFeaturesController extends Controller
      */
     public function index(): Response
     {
-        $this->authorize('viewAny.package_features');
+        $this->authorize('viewAny', PackageFeature::class);
         return inertia('Packages/Features/Index', ['packageFeatures' => PackageFeature::filtered()->paginate()]);
     }
 
@@ -29,7 +29,7 @@ class PackageFeaturesController extends Controller
      */
     public function create(): Response
     {
-        $this->authorize('store.package_features');
+        $this->authorize('store', PackageFeature::class);
         return inertia('Packages/Features/Create');
     }
 
@@ -42,7 +42,7 @@ class PackageFeaturesController extends Controller
      */
     public function store(StoreRequest $request): ?PackageFeature
     {
-        $this->authorize('store.package_features');
+        $this->authorize('store', PackageFeature::class);
         return PackageFeature::create($request->validated());
     }
 
@@ -55,7 +55,7 @@ class PackageFeaturesController extends Controller
      */
     public function show(PackageFeature $packageFeature): Response
     {
-        $this->authorize('view.package_features');
+        $this->authorize('view', $packageFeature);
         return inertia('Packages/Features/Show', compact('packageFeature'));
     }
 
@@ -68,7 +68,7 @@ class PackageFeaturesController extends Controller
      */
     public function edit(PackageFeature $packageFeature): Response
     {
-        $this->authorize('update.package_features');
+        $this->authorize('update', $packageFeature);
         return inertia('Packages/Features/Edit', compact('packageFeature'));
     }
 
@@ -82,7 +82,7 @@ class PackageFeaturesController extends Controller
      */
     public function update(UpdateRequest $request, PackageFeature $packageFeature): ?PackageFeature
     {
-        $this->authorize('update.package_features');
+        $this->authorize('update', $packageFeature);
         $packageFeature->update($request->validated());
         return $packageFeature;
     }
@@ -96,7 +96,18 @@ class PackageFeaturesController extends Controller
      */
     public function destroy(PackageFeature $packageFeature): bool
     {
-        $this->authorize('delete.package_features');
+        $this->authorize('delete', $packageFeature);
         return $packageFeature->delete();
+    }
+
+    /**
+     * @param PackageFeature $packageFeature
+     * @return bool
+     * @throws AuthorizationException
+     */
+    public function forceDestroy(PackageFeature $packageFeature): bool
+    {
+        $this->authorize('forceDelete', $packageFeature);
+        return $packageFeature->forceDelete();
     }
 }

@@ -19,7 +19,7 @@ class PackagesController extends Controller
      */
     public function index(): Response
     {
-        $this->authorize('viewAny.packages');
+        $this->authorize('viewAny', Package::class);
         return inertia('Packages/Index', ['packages' => Package::filtered()->paginate()]);
     }
 
@@ -31,7 +31,7 @@ class PackagesController extends Controller
      */
     public function create(): Response
     {
-        $this->authorize('store.packages');
+        $this->authorize('store', Package::class);
         return inertia('Packages/Create');
     }
 
@@ -44,7 +44,7 @@ class PackagesController extends Controller
      */
     public function store(StoreRequest $request): Package
     {
-        $this->authorize('store.packages');
+        $this->authorize('store', Package::class);
         return Package::create($request->validated());
     }
 
@@ -57,7 +57,7 @@ class PackagesController extends Controller
      */
     public function show(Package $package): Response
     {
-        $this->authorize('view.packages');
+        $this->authorize('view', $package);
         return inertia('Packages/Show', compact('package'));
     }
 
@@ -70,7 +70,7 @@ class PackagesController extends Controller
      */
     public function edit(Package $package): Response
     {
-        $this->authorize('update.packages');
+        $this->authorize('update', $package);
         return inertia('Packages/Edit', compact('package'));
     }
 
@@ -84,7 +84,7 @@ class PackagesController extends Controller
      */
     public function update(UpdateRequest $request, Package $package): Package
     {
-        $this->authorize('update.packages');
+        $this->authorize('update', $package);
         $package->update($request->validated());
         return $package;
     }
@@ -98,7 +98,18 @@ class PackagesController extends Controller
      */
     public function destroy(Package $package): bool
     {
-        $this->authorize('delete.packages');
+        $this->authorize('delete', $package);
         return $package->delete();
+    }
+
+    /**
+     * @param Package $package
+     * @return bool
+     * @throws AuthorizationException
+     */
+    public function forceDestroy(Package $package): bool
+    {
+        $this->authorize('forceDelete', $package);
+        return $package->forceDelete();
     }
 }
