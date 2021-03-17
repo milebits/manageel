@@ -14,6 +14,9 @@ use Milebits\Eloquent\Filters\Concerns\Filterable;
 use Milebits\Eloquent\Filters\Concerns\Nameable;
 use Milebits\Eloquent\Filters\Concerns\Sluggable;
 
+/**
+ * @mixin IdeHelperUser
+ */
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -63,4 +66,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function tokenFindOrCreate(string $name)
+    {
+
+    }
 }

@@ -11,6 +11,9 @@ use Milebits\Eloquent\Filters\Concerns\Filterable;
 use Milebits\Eloquent\Filters\Concerns\Nameable;
 use Milebits\Eloquent\Filters\Concerns\Sluggable;
 
+/**
+ * @mixin IdeHelperPanelTheme
+ */
 class PanelTheme extends Model
 {
     use HasFactory, SoftDeletes, Nameable, Sluggable, Enableable, Filterable;
