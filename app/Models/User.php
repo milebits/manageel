@@ -34,6 +34,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
+        'phone',
         'password',
     ];
 
@@ -66,9 +68,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function tokenFindOrCreate(string $name)
-    {
-
-    }
 }
