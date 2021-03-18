@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Milebits\Authoriser\Database\seeders\PermissionSeeder;
-use Milebits\Authoriser\Database\seeders\RoleSeeder;
+use Milebits\Authorizer\Database\seeders\RoleSeeder;
+use Milebits\Authorizer\Database\seeders\PermissionSeeder;
 
 class DatabaseSeeder extends Seeder
 {
