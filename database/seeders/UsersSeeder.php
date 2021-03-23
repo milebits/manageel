@@ -26,8 +26,7 @@ class UsersSeeder extends Seeder
         $admin = User::create([
             'name' => 'Centos Root',
             'username' => 'root',
-            'phone' => '+33 6 11 29 92 21',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('BfHg%h$$g8TDDa=R3+'),
             'email' => 'webmaster@manageel.test',
             'email_verified_at' => now(),
             'remember_token' => Str::random(),
@@ -40,8 +39,7 @@ class UsersSeeder extends Seeder
         $admin = User::create([
             'name' => 'Centos Moderator',
             'username' => 'moderator',
-            'phone' => '+33 3 72 91 21 62',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('_Grx9*H^!fHnF=pq!#'),
             'email' => 'moderator@manageel.test',
             'email_verified_at' => now(),
             'remember_token' => Str::random(),
