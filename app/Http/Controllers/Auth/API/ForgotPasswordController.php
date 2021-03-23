@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Laravel\Fortify\Fortify;
+use function response;
 
 class ForgotPasswordController extends Controller
 {
@@ -20,7 +21,7 @@ class ForgotPasswordController extends Controller
         $request->validate([Fortify::email() => 'required|email']);
         $status = $this->broker()->sendResetLink($request->only(Fortify::email()));
         return $request->wantsJson()
-            ? \response()->json([
+            ? response()->json([
                 "success" => $status == Password::RESET_LINK_SENT,
                 "status" => $status
             ])
