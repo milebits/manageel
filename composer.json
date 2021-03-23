@@ -17,7 +17,7 @@
         "laravel/jetstream": "^2.2",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
-        "milebits/authorizer": "^3.0",
+        "milebits/authorizer": "^3.2",
         "milebits/eloquent-filters": "^2.0",
         "milebits/society": "^3.2",
         "moneyphp/money": "^3.3",
