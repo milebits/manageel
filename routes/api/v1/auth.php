@@ -11,5 +11,4 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->nam
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get("/user", fn(Request $request) => $request->user())->name('user');
-    Route::post("/user/confirm_email", []);
 });
