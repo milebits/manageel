@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Milebits\Authorizer\Database\seeders\RoleSeeder;
 use Milebits\Authorizer\Database\seeders\PermissionSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,7 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RoleSeeder::class);
         $this->call(PermissionSeeder::class);
         $this->call(ManageELRolesSeeder::class);
         $this->call(UsersSeeder::class);
