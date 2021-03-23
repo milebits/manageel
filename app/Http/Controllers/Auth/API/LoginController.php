@@ -18,7 +18,7 @@ class LoginController extends Controller
      */
     public function store(LoginRequest $request): JsonResponse
     {
-        $data = collect($request->validated());
+        $data = $request->validated();
         $user = $this->findUser($data['identifier']);
         if (!$this->checkUser($user, $data['password'])) return $this->fail();
         return $this->success($request, $data['device_name']);
